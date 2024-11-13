@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class onDestroy : MonoBehaviour
+public class FinalBoss : MonoBehaviour
 {
-    public GameObject objectToSpawn; // El GameObject que quieres que aparezca
-    public Transform spawnPoint; // El punto exacto donde quieres que aparezca el nuevo objeto
-
 
     /*[SerializeField] private GameObject dieEffect;*/
     [SerializeField] private HealthBar healthBar;
@@ -19,8 +16,7 @@ public class onDestroy : MonoBehaviour
         health = maxHealth;
         spriteRender = GetComponent<SpriteRenderer>();
     }
-
-private void OnMouseDown() 
+    private void OnMouseDown() 
     {
         StartCoroutine(GetDamage());
     }
@@ -43,8 +39,6 @@ private void OnMouseDown()
         {
             /*Instantiate (dieEffect, transform.position, Quaternion.identity);*/
             Destroy(gameObject);
-            Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
         }
     }
-   
 }

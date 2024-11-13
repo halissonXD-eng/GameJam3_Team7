@@ -7,12 +7,12 @@ public class MoveForward : MonoBehaviour
     public float speed;
     public Animator attack;
 
+    
     private void Start() 
     {
         attack = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+  
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
