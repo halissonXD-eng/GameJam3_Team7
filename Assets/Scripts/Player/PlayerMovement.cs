@@ -9,12 +9,10 @@ public class PlayerMovement : MonoBehaviour
     //debe parar el personaje? con este boleano lo hace
     public bool stop;
     Rigidbody2D Rigid2D;
-    Animator animatorPlayer;
     Animator treeAnimator;
 
     void Start()
     {
-        animatorPlayer = GetComponent<Animator>();
         Rigid2D = GetComponent<Rigidbody2D>();
         treeAnimator = GameObject.Find("tree").GetComponent<Animator>();
     }
@@ -23,8 +21,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!stop)
         {
+
             treeAnimator.SetBool("isRuning",true);
             Rigid2D.AddForce(Vector2.right * Speed);
+
         }
         else
         {
