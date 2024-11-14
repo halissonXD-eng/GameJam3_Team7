@@ -240,7 +240,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bcb85d05bbdb8a2468fe865da75a2795, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -265,7 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 7646698868378444807, guid: 1a49426724d421c4d99ffc3357895ba7, type: 3}
-  spawnPoint: {fileID: 6564182557636597298, guid: 7a88e2f551096dc409f98933bdb20842, type: 3}
+  spawnPoint: {fileID: 3201601590880400973, guid: 7a88e2f551096dc409f98933bdb20842, type: 3}
+  dieEffect: {fileID: 1058167896555950625, guid: 97314cd06869a9b408eb22bfe8873af8, type: 3}
   healthBar: {fileID: 2973944057776263546}
   maxHealth: 20
 --- !u!61 &166823370789958456

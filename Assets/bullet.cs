@@ -24,10 +24,11 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter(Collision other) {
+    private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

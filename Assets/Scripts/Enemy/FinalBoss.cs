@@ -5,7 +5,7 @@ using UnityEngine;
 public class FinalBoss : MonoBehaviour
 {
 
-    /*[SerializeField] private GameObject dieEffect;*/
+    [SerializeField] private GameObject dieEffect;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private float maxHealth;
     private float health;
@@ -16,9 +16,13 @@ public class FinalBoss : MonoBehaviour
         health = maxHealth;
         spriteRender = GetComponent<SpriteRenderer>();
     }
-    private void OnMouseDown() 
+    private void OnCollisionEnter2D(Collision2D other) 
     {
-        StartCoroutine(GetDamage());
+        if(other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(other.gameObject);
+            StartCoroutine(GetDamage());
+        }
     }
 
     IEnumerator GetDamage()
@@ -37,7 +41,7 @@ public class FinalBoss : MonoBehaviour
 
         else 
         {
-            /*Instantiate (dieEffect, transform.position, Quaternion.identity);*/
+            Instantiate (dieEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

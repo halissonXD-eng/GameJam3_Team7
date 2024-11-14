@@ -2,13 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class onDestroy : MonoBehaviour
+public class Health_Player : MonoBehaviour
 {
-    public GameObject objectToSpawn; // El GameObject que quieres que aparezca
-    public Transform spawnPoint; // El punto exacto donde quieres que aparezca el nuevo objeto
-
-
-    [SerializeField] private GameObject dieEffect;
+    /*[SerializeField] private GameObject dieEffect;*/
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private float maxHealth;
     private float health;
@@ -19,16 +15,14 @@ public class onDestroy : MonoBehaviour
         health = maxHealth;
         spriteRender = GetComponent<SpriteRenderer>();
     }
-
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.CompareTag("Bullet"))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Chicken"))
         {
-            Destroy(other.gameObject);
+            
             StartCoroutine(GetDamage());
         }
     }
-
 
     IEnumerator GetDamage()
     {
@@ -46,10 +40,8 @@ public class onDestroy : MonoBehaviour
 
         else 
         {
-            Instantiate (dieEffect, transform.position, Quaternion.identity);
+            /*Instantiate (dieEffect, transform.position, Quaternion.identity);*/
             Destroy(gameObject);
-            Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
         }
     }
-   
 }

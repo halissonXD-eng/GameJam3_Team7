@@ -268,7 +268,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: f7472d29deaa7414abffd38318319096, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -293,7 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 4233071081595707625, guid: 189c316c547f6ae47b3ddaa978f9afe6, type: 3}
-  spawnPoint: {fileID: 6874626323132465641, guid: d87f212c0b9b7ce499f7a8265d85a014, type: 3}
+  spawnPoint: {fileID: 463597503664127437, guid: d87f212c0b9b7ce499f7a8265d85a014, type: 3}
+  dieEffect: {fileID: 1058167896555950625, guid: 97314cd06869a9b408eb22bfe8873af8, type: 3}
   healthBar: {fileID: 3062508188204446605}
   maxHealth: 15
 --- !u!61 &3344170368812507940
@@ -328,7 +329,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00003742054, y: 0.0007252842}
+  m_Offset: {x: -0.000037416816, y: 0.0021997876}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -339,7 +340,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20152259, y: 0.20646349}
+  m_Size: {x: 0.20152259, y: 0.20351449}
   m_EdgeRadius: 0
 --- !u!50 &2512422524836611089
 Rigidbody2D:
