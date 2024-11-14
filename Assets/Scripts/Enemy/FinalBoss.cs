@@ -28,11 +28,11 @@ public class FinalBoss : MonoBehaviour
     IEnumerator GetDamage()
     {
         float damageDuration = 0.1f;
-        float damage = Random.Range(1f, 2f);
+        float damage = Random.Range(1f, 5f);
         health -= damage;
         healthBar.UpdateHealthBar(maxHealth, health);
 
-        if (health >0)
+        if (health > 0)
         {
             spriteRender.color = Color.red;
             yield return new WaitForSeconds (damageDuration);

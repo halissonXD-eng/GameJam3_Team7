@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject Bullet;
     Transform Attach;
     Animator treeAnimator;
+    public AudioClip clip;
     private void Start() 
     {
         treeAnimator = GameObject.Find("tree").GetComponent<Animator>();
@@ -22,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     }
     public void Fire()
     {
-
+        AudioManager.Instance.PlaySFX(clip);
         Instantiate(Bullet,Attach.position,Attach.rotation);
     }
 }

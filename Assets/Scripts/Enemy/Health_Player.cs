@@ -10,6 +10,8 @@ public class Health_Player : MonoBehaviour
     private float health;
     private SpriteRenderer spriteRender;
 
+    [SerializeField] GameObject LoseUI;
+    
     private void Start() 
     {
         health = maxHealth;
@@ -19,7 +21,6 @@ public class Health_Player : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Chicken"))
         {
-            
             StartCoroutine(GetDamage());
         }
     }
@@ -31,17 +32,18 @@ public class Health_Player : MonoBehaviour
         health -= damage;
         healthBar.UpdateHealthBar(maxHealth, health);
 
-        if (health >0)
+        if (health > 0)
         {
             spriteRender.color = Color.red;
             yield return new WaitForSeconds (damageDuration);
             spriteRender.color = Color.white;
         }
-
         else 
         {
-            /*Instantiate (dieEffect, transform.position, Quaternion.identity);*/
-            Destroy(gameObject);
+            Time.timeScale = 0f; 
+            LoseUI.SetActive(true);
         }
     }
+
+    
 }

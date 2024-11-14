@@ -13,9 +13,11 @@ public class onDestroy : MonoBehaviour
     [SerializeField] private float maxHealth;
     private float health;
     private SpriteRenderer spriteRender;
+    PlayerMovement playerMovement;
 
     private void Start() 
     {
+        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
         health = maxHealth;
         spriteRender = GetComponent<SpriteRenderer>();
     }
@@ -46,6 +48,7 @@ public class onDestroy : MonoBehaviour
 
         else 
         {
+            playerMovement.stop = false;
             Instantiate (dieEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
             Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
